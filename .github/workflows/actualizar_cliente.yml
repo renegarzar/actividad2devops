@@ -1,0 +1,15 @@
+name: Actualizar Cliente Existente
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'clientes/**'
+
+jobs:
+  actualizar_cliente:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          echo "Se ha ACTUALIZADO un cliente recurrente."
+          echo "Modificado por: ${{ github.actor }}"

@@ -1,0 +1,17 @@
+name: Consultar Cliente
+on:
+  workflow_dispatch:
+    inputs:
+      nombre_cliente:
+        description: 'Nombre del cliente a consultar'
+        required: true
+        type: string
+
+jobs:
+  consultar_cliente:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          echo "Se ha solicitado consultar al cliente: ${{ inputs.nombre_cliente }}"
+          echo "Consulta realizada por: ${{ github.actor }}"

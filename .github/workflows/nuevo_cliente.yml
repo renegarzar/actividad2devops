@@ -1,0 +1,15 @@
+name: Crear Nuevo Cliente
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'clientes/**'
+
+jobs:
+  nuevo_cliente:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          echo "Se ha creado un archivo para un NUEVO CLIENTE."
+          echo "Revisa los cambios realizados por: ${{ github.actor }}"
